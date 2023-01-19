@@ -1,13 +1,14 @@
 import './App.css'
-import Cards from './components/Cards.jsx'
+import Cards from './components/Cards/Cards.jsx'
+import Nav from './components/Nav/Nav.jsx'
+
 import { useState } from 'react'
-import Nav from './components/Nav.jsx'
 
 
 export default function App () {
   const [characters, setCharacters] = useState([]);
 
-  const onSearch = (character) => {
+  const handleSearch = (character) => {
     fetch(`https://rickandmortyapi.com/api/character/${character}`)
     .then((response) => response.json())
     .then((data) => {
@@ -24,21 +25,20 @@ export default function App () {
 
   //   } ))
   // }
+  const handleClose = () => {
+    alert('se emula cierre de carta');
+  }
 
   return (
     <div className='App' style={{ padding: '25px' }}>
-
-      <Nav onSearch={onSearch} />
-      <hr />
+      <Nav handleSearch={handleSearch} />
 
       <div>        
         <Cards
           characters={characters}
-          // onClose={onClose}
+          handleClose={handleClose}
         />
       </div>
-      <hr />
-
     </div>
   )
 }

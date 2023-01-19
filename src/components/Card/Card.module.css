@@ -1,0 +1,33 @@
+.contenedor {
+    color: white;
+    width: fit-content;
+    padding: 5px;
+    border: 2px solid rgb(231, 234, 225);
+}
+
+.contenedorCerrar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cerrar {
+    background-color: rgba(236, 236, 236, 0.616);
+}
+
+.cerrar:hover {
+    background-color: rgba(240, 240, 240, 0.808);
+}
+
+.imagen {
+    border-radius: 100%;
+}
+
+.rectangulo {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: normal;
+    background-color: rgba(7, 3, 43, 0.71);
+}
+
