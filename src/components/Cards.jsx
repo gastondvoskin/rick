@@ -16,7 +16,7 @@ export default function Cards({characters}) {
             characters.map(({name, species, gender, image}, index) => {
                return <Card 
                   // key={index}
-                  onClose={() => window.alert('Emulamos que se cierra la card')}
+                  // onClose={props.onClose}
                   name={name}
                   species={species}
                   gender={gender}
@@ -29,23 +29,3 @@ export default function Cards({characters}) {
 }
 
 
-
-
-// export default function Cards({characters}) {
-//    return (
-//       <CardDiv>
-//          {
-//             characters.map(({name, species, gender, image, onClose}, index) => {
-//                return <Card 
-//                   key={index}
-//                   name={name}
-//                   species={species}
-//                   gender={gender}
-//                   image={image}
-//                   onClose={() => window.alert('Emulamos que se cierra la card')}
-//                />
-//             })
-//          }
-//       </CardDiv>
-//    )
-// }
