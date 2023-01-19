@@ -3,10 +3,10 @@ import SearchBar from '../SearchBar/SearchBar.jsx';
 import styles from './Nav.module.css';
 
 
-export default function Nav({handleSearch}) {
+export default function Nav(props) {
     return (
         <nav className={styles.nav}>
-            <SearchBar handleSearch={handleSearch} />
+            <SearchBar handleSearch={props.handleSearch} />
         </nav>
     )
 }

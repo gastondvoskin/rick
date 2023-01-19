@@ -1,28 +1,29 @@
 import React, {useState} from "react";
 import styles from './SearchBar.module.css';
 
-export default function SearchBar({handleSearch}) {
-   const [character, setCharacter] = useState('');
-   // const [inputValue, setInputValue] = useState('');
+export default function SearchBar(props) {
+   const [inputValue, setInputValue] = useState('');
 
    const handleChange = (event) => {
-      // setInputValue(event.target.value);
-      setCharacter(event.target.value);
+      setInputValue(event.target.value);
    }
 
    return (
       <div className={styles.div}>
          <input className={styles.input}
             type='search' 
-            placeholder='Buscar por Id...' 
-            // value={inputValue}
+            placeholder='Search by id...' 
+            value={inputValue}
             onChange={handleChange}
          />
+
          <button className={styles.button}
-            onClick={() => handleSearch(character)}>Agregar
+            onClick={() => props.handleSearch(inputValue)}>Go!
          </button>
 
-         {/* <Boton onClick={() => handleSearch(character)}>Agregar</Boton>  */}
+         <button className={styles.button}
+            onClick={() => props.handleSearch(  Math.floor(Math.random() * 826 + 1)  )}>Surprise me!
+         </button>
       </div>
    );
 }
