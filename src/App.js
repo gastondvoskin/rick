@@ -75,16 +75,10 @@ export default function App () {
   }
 
   let location = useLocation();
-  // console.log(location);
-  // console.log(location.pathname);
-
-// si la location NO es / --> mostrar el nav. 
-
-
 
   return (
     <div className='app'>   
-      {location !== "/" && <Nav handleSearch={handleSearch} handleLogout={handleLogout}/> } 
+      {location.pathname !== "/" && <Nav handleSearch={handleSearch} handleLogout={handleLogout}/> } 
       <Routes>
         {/* <Route path="/" element={<Navigate to="/home" />} /> */}
         <Route path="/" element={<Form login={login}/>} />
