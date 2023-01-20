@@ -4,8 +4,10 @@ import Nav from './components/Nav/Nav.jsx'
 import About from './components/About/About.jsx';
 import Detail from './components/Detail/Detail';
 import Error from './components/Error/Error';
-import {Routes, Route, Navigate} from 'react-router-dom';
-import { useState } from 'react'
+import Form from './components/Form/Form';
+
+import { Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 
 export default function App () {
@@ -46,11 +48,38 @@ export default function App () {
     setCharacters(caracFilt);
   }
 
+  // login. inicio.
+  const [access, setAccess] = useState(false);
+  const navigate = useNavigate();
+  const exampleUsername = 'example@gmail.com'; 
+  // const examplePassword = '123asd';
+
+  const login = (userData) => {
+    if(userData.username = exampleUsername) {
+      setAccess(true);
+      navigate('/home');
+    }
+    console.log('ok');
+  }
+
+  // login. fin
+
+  let location = useLocation();
+  // console.log(location);
+  // console.log(location.pathname);
+
+// si la location NO es / --> mostrar el nav. 
+
+// useEffect(() => {
+//   !access && navigate('/');
+// }, [access]);
+
   return (
-    <div>
-      <Nav handleSearch={handleSearch} />
+    <div>   
+      {location !== "/" && <Nav handleSearch={handleSearch} /> } 
       <Routes>
-        <Route path="/" element={<Navigate to="/home" />} />
+        {/* <Route path="/" element={<Navigate to="/home" />} /> */}
+        <Route path="/" element={<Form login={login}/>} />
         <Route path="/home" element={<Cards characters={characters} handleClose={handleClose} />} />
         <Route path="/about" element={<About />} />
         <Route path="/detail/:id" element={<Detail />} />
