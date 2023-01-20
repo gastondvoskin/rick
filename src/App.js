@@ -1,7 +1,10 @@
 import './App.css'
 import Cards from './components/Cards/Cards.jsx'
 import Nav from './components/Nav/Nav.jsx'
-
+import About from './components/About/About.jsx';
+import Detail from './components/Detail/Detail';
+import Error from './components/Error/Error';
+import {Routes, Route, Navigate} from 'react-router-dom';
 import { useState } from 'react'
 
 
@@ -43,20 +46,16 @@ export default function App () {
     setCharacters(caracFilt);
   }
 
-  const handleRandom = () => {
-    console.log('ok');
-  }
-
   return (
-    <div className='App' style={{ padding: '25px' }}>
-      <Nav 
-        handleSearch={handleSearch} 
-      />
-      
-      <Cards
-        characters={characters}
-        handleClose={handleClose}
-      />
+    <div>
+      <Nav handleSearch={handleSearch} />
+      <Routes>
+        <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="/home" element={<Cards characters={characters} handleClose={handleClose} />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/detail/:id" element={<Detail />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
     </div>
   )
 }

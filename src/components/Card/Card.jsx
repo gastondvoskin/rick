@@ -24,7 +24,6 @@ export default function Card(props) {
          <img className={styles.imagen} src={props.image} alt="imagen" />
 
          <div className={styles.rectangulo}>
-            <h3>About {props.name}</h3>
             <h4>{props.species}</h4>
             <h4>{props.gender}</h4>
             <h4>{props.id}</h4>
