@@ -52,17 +52,27 @@ export default function App () {
   const [access, setAccess] = useState(false);
   const navigate = useNavigate();
   const exampleUsername = 'example@gmail.com'; 
-  // const examplePassword = '123asd';
+  const examplePassword = '123asd';
 
   const login = (userData) => {
-    if(userData.username = exampleUsername) {
+    if(userData.username === exampleUsername && 
+      userData.password === examplePassword) {
+      console.log(userData.username === exampleUsername);
       setAccess(true);
       navigate('/home');
     }
-    console.log('ok');
   }
 
+  // useEffect(() => {
+//   !access && navigate('/');
+// }, [access]);
+
   // login. fin
+
+  const handleLogout = () => {
+    alert('Thanks for your visit!');
+    setAccess(false);
+  }
 
   let location = useLocation();
   // console.log(location);
@@ -70,13 +80,11 @@ export default function App () {
 
 // si la location NO es / --> mostrar el nav. 
 
-// useEffect(() => {
-//   !access && navigate('/');
-// }, [access]);
+
 
   return (
-    <div>   
-      {location !== "/" && <Nav handleSearch={handleSearch} /> } 
+    <div className='app'>   
+      {location !== "/" && <Nav handleSearch={handleSearch} handleLogout={handleLogout}/> } 
       <Routes>
         {/* <Route path="/" element={<Navigate to="/home" />} /> */}
         <Route path="/" element={<Form login={login}/>} />

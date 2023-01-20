@@ -5,9 +5,9 @@ import styles from './Card.module.css';
 export default function Card(props) {
 
    return (
-      <div className={styles.contenedor}>
+      <div className={styles.container}>
          {/* <button onClick={() => {handleClose(character.id)}}>X</button> */}
-         <div className={styles.contenedorCerrar}>
+         <div className={styles.closeContainer}>
             <button 
                className={styles.cerrar} 
                onClick={ () => {
@@ -17,16 +17,15 @@ export default function Card(props) {
             </button>
          </div>
 
-         <div className={styles.rectangulo}>
+         <div className={styles.rectangulo1}>
             <h2>{props.name}</h2>
          </div>
          
          <img className={styles.imagen} src={props.image} alt="imagen" />
 
-         <div className={styles.rectangulo}>
-            <h4>{props.species}</h4>
-            <h4>{props.gender}</h4>
-            <h4>{props.id}</h4>
+         <div className={styles.rectangulo2}>
+            <h4>{props.species} - {props.gender}</h4>
+            {/* <h4>{props.id}</h4> */}
          </div>
       </div>
    );

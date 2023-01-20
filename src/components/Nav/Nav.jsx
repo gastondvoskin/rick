@@ -8,6 +8,10 @@ import styles from './Nav.module.css';
 export default function Nav(props) {
     return (
         <nav className={styles.nav}>
+            <button onClick={props.handleLogout}>
+                <NavLink to="/">LOGOUT</NavLink>
+            </button>
+
             <button>
                 <NavLink to="/home">HOME</NavLink>
             </button>

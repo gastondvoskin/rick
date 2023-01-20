@@ -9,7 +9,7 @@ export default function Cards(props) {
    const handleClose = props.handleClose;
 
    return (
-      <div>
+      <div className={styles.container}>
          {
             characters.map((element, index) => {
                // console.log(element);

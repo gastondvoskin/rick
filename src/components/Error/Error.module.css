@@ -1,3 +1,10 @@
 .container {
+    height: 800px;
+    font-size: xx-large;
     background-image: url('../../assets/oops.jpeg');
+    color: rgb(2, 2, 61);
+}
+
+.subContainer {
+    background-color: rgb(163, 220, 149);
 }

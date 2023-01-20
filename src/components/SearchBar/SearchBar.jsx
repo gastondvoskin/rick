@@ -12,17 +12,17 @@ export default function SearchBar(props) {
       <div className={styles.div}>
          <input className={styles.input}
             type='search' 
-            placeholder='Search by id...' 
+            placeholder='Type an Id: 1 - 865' 
             value={inputValue}
             onChange={handleChange}
          />
 
          <button className={styles.button}
-            onClick={() => props.handleSearch(inputValue)}>Go!
+            onClick={() => props.handleSearch(inputValue)}>Search
          </button>
 
          <button className={styles.button}
-            onClick={() => props.handleSearch(  Math.floor(Math.random() * 826 + 1)  )}>Surprise me!
+            onClick={() => props.handleSearch(  Math.floor(Math.random() * 826 + 1)  )}>Random character
          </button>
       </div>
    );

@@ -1,8 +1,7 @@
-.App {
-   /* background-color: rgb(189, 178, 169); */
-   /* background-size: cover; */
+.app {
    padding: '25px';
    background-image: url('./assets/da.jpeg');
    text-align: center;
-   
 }
+
+   /* background-color: rgb(189, 178, 169); */
